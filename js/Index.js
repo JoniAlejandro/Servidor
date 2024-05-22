@@ -11,11 +11,11 @@ class Index{
 	}
 
     setSocketUrl(url){
-        socket.setUrl(`wss://${url}:8080`)
+        socket.setUrl(`wss://${url}`)
     }
 
     setHttpUrl(ip){
-        ajax.setListener(`https://${ip}:80`)
+        ajax.setListener(`https://${ip}`)
     }
 
     async CONSULTAS(data) {
