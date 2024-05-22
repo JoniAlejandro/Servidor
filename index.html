@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/WebSocketClient.js" type="module" ></script>
+    <script src="js/Ajax.js"></script>
+    <script src="js/IndexUI.js"></script>
+    <script src="js/Index.js" type="module"></script>
+	<title>Programación Web</title>
+	<link rel="stylesheet" href="css/index.css">
+	
+</head>
+<body>
+	<header>
+		<h1>Web Socket</h1>
+	</header>
+	<nav>
+		<h4>Socket Web|Http</h4>
+	</nav>
+	<main>
+		<div id="interfaz">
+            <div id="app-bar">
+                <span>Socket Web</span>
+            </div> 
+            <div id="cuerpo-pantalla-uno" class="cuerpo-pantalla-uno">
+                <div class ="contenedor-input">
+                    <input id="ip" type="text" name="" required="" placeholder="IP del servidor">
+				    <label>Direccion IP</label>
+                </div>
+                <div class ="contenedor-input">
+                    <input id="puerto" type="text" name="" required="" placeholder="Numero de puerto">
+				    <label>Puerto COM</label>
+                </div>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" id="icono-cloud" class="cloud-off " width="100" height="100" viewBox="0 0 512 512">
+                    <path d="M396 432H136c-36.44 0-70.36-12.57-95.51-35.41C14.38 372.88 0 340 0 304c0-36.58 13.39-68.12 38.72-91.22 18.11-16.53 42.22-28.25 69.18-33.87a16 16 0 0011.37-9.15 156.24 156.24 0 0142.05-56C187.76 91.69 220.5 80 256 80a153.57 153.57 0 01107.14 42.9c24.73 23.81 41.5 55.28 49.18 92a16 16 0 0012.12 12.39C470 237.42 512 270.43 512 328c0 33.39-12.24 60.78-35.41 79.23C456.23 423.43 428.37 432 396 432z" fill=""/>
+                </svg>
+
+                <div id="circle-indicator">
+                   <div id="circulo">
+                    <label id="porcentaje-analogico">0%</label>
+                   </div>
+                   <label>0.0</label>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" id="icono-light" class="light light-off" width="70" height="70" viewBox="0 0 512 512">
+                    <path d="M256 118a22 22 0 01-22-22V48a22 22 0 0144 0v48a22 22 0 01-22 22zM256 486a22 22 0 01-22-22v-48a22 22 0 0144 0v48a22 22 0 01-22 22zM369.14 164.86a22 22 0 01-15.56-37.55l33.94-33.94a22 22 0 0131.11 31.11l-33.94 33.94a21.93 21.93 0 01-15.55 6.44zM108.92 425.08a22 22 0 01-15.55-37.56l33.94-33.94a22 22 0 1131.11 31.11l-33.94 33.94a21.94 21.94 0 01-15.56 6.45zM464 278h-48a22 22 0 010-44h48a22 22 0 010 44zM96 278H48a22 22 0 010-44h48a22 22 0 010 44zM403.08 425.08a21.94 21.94 0 01-15.56-6.45l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.55 37.56zM142.86 164.86a21.89 21.89 0 01-15.55-6.44l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.56 37.55zM256 358a102 102 0 11102-102 102.12 102.12 0 01-102 102z" fill=""/>
+                </svg>
+
+            </div>
+            <div id="cuerpo-pantalla-dos" class="cuerpo-pantalla-dos oculto">
+                <div id="view"> </div>
+                <div id="altas" class="add">+</div>
+            </div>
+            <div id="alert" class="contenedor-alert oculto">
+                <span id="titulo" class="titulo"></span>
+                <div class="alert ">
+                    <input id="id" class="oculto">
+                    <div class="contenedor-input">
+                        <input id="nombre" type="text" name="" required="" placeholder="Ejp. Joni">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="contenedor-input">
+                        <input id="nacionalidad" type="text" name="" required="" placeholder="Ejp. Mexicano">
+                        <label>Nacionalidad</label>
+                    </div>
+                    <div class="contenedor-input">
+                        <input id="edad" type="text" name="" required="" placeholder="Ejp. 12">
+                        <label>Edad</label>
+                    </div>
+                    <div class="botones">
+                        <div id="cancelar">
+                            <label class="btn-neon" >
+                                Cancelar	
+                            </label>
+                        </div>
+                        <div id="cambios">
+                            <label class="btn-neon">
+                                Confirmar
+                                
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="barra-nevegacion">
+                
+                <span id="servidor" class="items-nav item-isSeleted">
+                    <img src="img/cloud.png" alt="" class="icono-nav">
+                    Servicios
+                </span>
+                
+                <span id="servicios" class="items-nav ">
+                    <img src="img/lista.png" alt="" class="icono-nav">
+                    Servidor
+                </span>
+            </div>
+        </div>
+	</main>
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+        <div id="progress-label"></div>
+    </div>
+	<footer>Footer</footer>
+</body>
+</html>
+
