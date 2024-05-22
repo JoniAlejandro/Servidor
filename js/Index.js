@@ -11,7 +11,7 @@ class Index{
 	}
 
     setSocketUrl(url){
-        socket.setUrl(`ws://${url}:8080`)
+        socket.setUrl(`wss://${url}:8080`)
     }
 
     setHttpUrl(ip){
